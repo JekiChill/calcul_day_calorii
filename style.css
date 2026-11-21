@@ -1,0 +1,347 @@
+/* ===== Переменные и сброс ===== */
+:root {
+  --bg: #f2f5fa;
+  --card: #ffffff;
+  --text: #1d2939;
+  --muted: #667085;
+  --primary: #2f80ed;
+  --primary-dark: #1b64c4;
+  --primary-soft: #e8f1fe;
+  --danger: #d64545;
+  --success: #157a4a;
+  --success-soft: #e9f7ef;
+  --success-border: #bfe3cc;
+  --border: #dbe3ee;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(29, 41, 57, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ===== Каркас ===== */
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.main {
+  flex: 1;
+  padding-top: 24px;
+  padding-bottom: 40px;
+}
+
+/* ===== Шапка ===== */
+.site-header {
+  background: linear-gradient(135deg, #2f80ed, #56ccf2);
+  color: #ffffff;
+  padding: 32px 0;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+.site-subtitle {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ===== Карточки ===== */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.card + .card {
+  margin-top: 20px;
+}
+
+.card-title {
+  margin: 0 0 16px;
+  font-size: 1.15rem;
+}
+
+/* ===== Форма ===== */
+.fieldset-reset {
+  border: 0;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.fieldset-reset legend {
+  padding: 0;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 11px 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.15);
+}
+
+input.invalid,
+input.invalid:focus {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(214, 69, 69, 0.12);
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  width: auto;
+  margin: 0;
+  accent-color: var(--primary);
+}
+
+.error {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: var(--danger);
+}
+
+.error:empty {
+  display: none;
+}
+
+.form-error {
+  margin-top: 10px;
+}
+
+/* ===== Кнопки ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-ghost {
+  color: var(--muted);
+  background: transparent;
+  border-color: var(--border);
+  font-size: 0.9rem;
+  padding: 8px 14px;
+}
+
+.btn-ghost:hover {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ===== Результат ===== */
+.result {
+  margin-top: 18px;
+  padding: 16px;
+  background: var(--success-soft);
+  border: 1px solid var(--success-border);
+  border-radius: 12px;
+}
+
+.result-label {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--success);
+}
+
+.result-value {
+  margin: 2px 0 6px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--success);
+}
+
+.result-note {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ===== Журнал ===== */
+.journal-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.journal-head .card-title {
+  margin: 0;
+}
+
+.empty-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.journal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.journal-item {
+  padding: 12px 14px;
+  background: #f8fafd;
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+}
+
+.journal-time {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.journal-data {
+  margin: 2px 0;
+  font-size: 0.9rem;
+}
+
+.journal-result {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--success);
+}
+
+/* ===== Страница 404 ===== */
+.error-card {
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.error-code {
+  margin: 0;
+  font-size: clamp(72px, 22vw, 128px);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--primary);
+  text-shadow: 0 6px 18px rgba(47, 128, 237, 0.25);
+}
+
+.error-text {
+  max-width: 460px;
+  margin: 12px auto 22px;
+  color: var(--muted);
+}
+
+/* ===== Подвал ===== */
+.site-footer {
+  padding: 18px 0;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--muted);
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 520px) {
+  .site-header {
+    padding: 24px 0;
+  }
+
+  .site-title {
+    font-size: 1.35rem;
+  }
+
+  .card {
+    padding: 18px 16px;
+  }
+
+  .main {
+    padding-top: 18px;
+    padding-bottom: 28px;
+  }
+
+  .btn-ghost {
+    width: 100%;
+  }
+
+  .journal-head .card-title {
+    width: 100%;
+  }
+}
